@@ -677,6 +677,16 @@ h6 {
   }
 }
 
+.aboutme-page__body p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.aboutme-page__body ul > li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 .skills-page {
   padding-top: 50px;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(187, 133, 255, 0.14)), to(rgba(255, 177, 222, 0.14)));

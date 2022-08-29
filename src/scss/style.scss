@@ -359,6 +359,16 @@ body {
 		line-height: math.div(22, 16);
 		color: #47444e;
 		@include adaptiveValue("font-size", 18, 14);
+		p {
+			margin-top: 15px;
+			margin-bottom: 15px;
+			font-weight: 600;
+		}
+		ul > li {
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
 	}
 }
 // ==============================================
