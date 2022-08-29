@@ -1005,6 +1005,13 @@ h6 {
 
   .menu-open .header__menu-body {
     top: 0;
+    background: rgba(0, 0, 0, 0.79);
+    z-index: 50;
+  }
+
+  .menu-open .header__menu-body .header__link {
+    z-index: 51;
+    color: white;
   }
 
   .icon-menu {
@@ -1015,7 +1022,7 @@ h6 {
             flex: 0 0 70px;
     height: 4.375rem;
     cursor: pointer;
-    z-index: 5;
+    z-index: 55;
     border-radius: 50%;
     background: #ffffff;
     -webkit-box-shadow: 0px 20px 50px rgba(198, 185, 233, 0.3);
