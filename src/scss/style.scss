@@ -318,6 +318,48 @@ body {
 		color: #47444e;
 		@include adaptiveValue("font-size", 18, 14);
 	}
+	// .aboutme-page__spollers
+	&__spollers {
+	}
+	// .aboutme-page__item
+	&__item {
+	}
+	// .aboutme-page__title
+	&__title {
+		font-weight: 500;
+		font-size: 24px;
+		line-height: math.div(32, 24);
+		text-decoration-line: underline;
+		color: #25202f;
+		display: flex;
+		align-items: center;
+		gap: 13px;
+		margin-left: auto;
+		transition: all 0.3s ease 0s;
+		margin-bottom: 10px;
+		&._spoller-active {
+			&::after {
+				transform: rotate(90deg);
+			}
+		}
+		&::after {
+			content: "";
+			background: url("@img/aboutme/arrow.svg") center no-repeat;
+			width: 18px;
+			height: 16px;
+			transform: rotate(0deg);
+			transition: all 0.3s ease 0s;
+		}
+		&:hover {
+			font-weight: 700;
+		}
+	}
+	// .aboutme-page__body
+	&__body {
+		line-height: math.div(22, 16);
+		color: #47444e;
+		@include adaptiveValue("font-size", 18, 14);
+	}
 }
 // ==============================================
 

@@ -397,6 +397,7 @@ h6 {
 
 .footer {
   font-family: roboto;
+  font-size: 14px;
 }
 
 .footer__body {
@@ -413,11 +414,11 @@ h6 {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
 }
 
 .footer__copy p:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .footer__worktime {
@@ -425,7 +426,7 @@ h6 {
 }
 
 .footer__worktime p:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .main-page__body {
@@ -611,6 +612,67 @@ h6 {
 
 @supports not (font-size: clamp( 0.875rem , 0.8029279279rem  +  0.3603603604vw , 1.125rem )) {
   .aboutme-page__description {
+    font-size: calc(0.875rem + 0.25 * (100vw - 20rem) / 69.375);
+  }
+}
+
+.aboutme-page__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.3333333333;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: #25202f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 13px;
+  margin-left: auto;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  margin-bottom: 10px;
+}
+
+.aboutme-page__title._spoller-active::after {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.aboutme-page__title::after {
+  content: "";
+  background: url("../img/aboutme/arrow.svg") center no-repeat;
+  width: 18px;
+  height: 16px;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.aboutme-page__title:hover {
+  font-weight: 700;
+}
+
+.aboutme-page__body {
+  line-height: 1.375;
+  color: #47444e;
+}
+
+@supports (font-size: clamp( 0.875rem , 0.8029279279rem  +  0.3603603604vw , 1.125rem )) {
+  .aboutme-page__body {
+    font-size: clamp( 0.875rem , 0.8029279279rem  +  0.3603603604vw , 1.125rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.8029279279rem  +  0.3603603604vw , 1.125rem )) {
+  .aboutme-page__body {
     font-size: calc(0.875rem + 0.25 * (100vw - 20rem) / 69.375);
   }
 }
