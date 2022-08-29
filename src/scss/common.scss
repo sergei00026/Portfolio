@@ -1,0 +1,67 @@
+// Заголовки, общие БЄМ блоки и проче...
+.title-block {
+	&__heading {
+		display: grid;
+		@include adaptiveValue("font-size", 26, 20);
+		line-height: math.div(24, 18);
+		color: #8643dc;
+		&::after {
+			content: "";
+			width: 50px;
+			height: 2px;
+			background: #8643dc;
+			margin-top: 10px;
+		}
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+	&__sub-heading {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 46, 32);
+		line-height: math.div(48, 36);
+	}
+}
+.btn {
+	background: #8643dc;
+	border-radius: 100px;
+	font-family: "Red Hat Display";
+	font-weight: 500;
+	font-size: 24px;
+	line-height: math.div(32, 24);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	padding: 14px 48px;
+	font-family: inherit;
+}
+//========================
+@keyframes rotateBig {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotateBig2 {
+	0% {
+		transform: rotate(45deg);
+	}
+	100% {
+		transform: rotate(505deg);
+	}
+}
+//=================
+@keyframes triangle {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	50% {
+		transform: translate(10px, 0px);
+	}
+	75% {
+		transform: translate(5px, 5px);
+	}
+}

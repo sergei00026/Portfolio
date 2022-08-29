@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Главная"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="page__main main-page">
+					<div class="main-page__container">
+						<div class="main-page__body">
+							<div class="main-page__content">
+								<div class="main-page__text">Привет</div>
+								<h1 class="main-page__name">Сергей Королев</h1>
+								<div class="main-page__profession">Верстальщик / Frontend разработчик </div>
+								<a href="tel:89872822244" class="main-page__btn btn">Позвонить</a>
+							</div>
+							<div class="main-page__images">
+								<img src="@img/main/photo.png" alt="photo">
+								<div class="main-page__svgs">
+									<svg class="main-page__svg1" viewBox="139.19 38.275 117.787 112.936" width="535" height="535">
+										<path d="M 160.223 71.063 Q 198.084 5.487 235.944 71.063 L 244.357 85.635 Q 282.217 151.211 206.497 151.211 L 189.67 151.211 Q 113.95 151.211 151.81 85.635 Z" data-bx-shape="triangle 113.95 5.487 168.267 145.724 0.5 0.45 1@64553ec5" style="stroke: rgb(0, 0, 0); fill: rgb(249, 129, 198, 0.5); fill-rule: nonzero; stroke-miterlimit: 1; stroke-dashoffset: 4px; stroke-opacity: 0; paint-order: fill;"></path>
+									</svg>
+									<svg class="main-page__svg2" viewBox="139.19 38.275 117.787 112.936" width="535" height="535">
+										<path d="M 160.223 71.063 Q 198.084 5.487 235.944 71.063 L 244.357 85.635 Q 282.217 151.211 206.497 151.211 L 189.67 151.211 Q 113.95 151.211 151.81 85.635 Z" data-bx-shape="triangle 113.95 5.487 168.267 145.724 0.5 0.45 1@64553ec5" style="stroke: rgb(0, 0, 0); fill-rule: nonzero; stroke-miterlimit: 1; stroke-dashoffset: 4px; stroke-opacity: 0; paint-order: fill; fill: rgb(182, 132, 243, 0.5);"></path>
+									</svg>
+								</div>
+								<span class="main-page__one"></span>
+								<span class="main-page__two"></span>
+								<span class="main-page__three"></span>
+								<span class="main-page__four"></span>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="page__aboutme aboutme-page">
+					<div class="aboutme-page__container">
+						<div class="aboutme-page__tiltle title-block">
+							<div class="title-block__heading">Обо мне</div>
+							<h2 class="title-block__sub-heading">Краткая история</h2>
+						</div>
+						<div class="aboutme-page__body">
+							<div class="aboutme-page__description">
+								Мой вход в IT был в 2005 году, тогда на табличной верстке реализовал несколько проектов, потом по стечению обстоятельств сменил род деятельности но работал в ИТ отделе инженерном службы заказчика.
+								Желание верстать и заниматься любимым делом - Frontend разработкой всегда было на первом месте. И с 2019 года я занялся активным изучением и практикой в фронтенд разработке. Теперь я могу сверстать любой сайт – адаптивно, отзывчиво, валидно, кроссбраузерно, mobile first. Имею уверенные знания HTML5, CSS3, SASS(SCSS), Javascript ES6. Свободно владению навыками работы с Adobe Photoshop, Avacode, Figma. Так же для ускорения верстки использую сборку Gulp & Webpack. Разбираюсь в GIT и Github – имею активный профиль. Умею разбираться в чужом коде. Сейчас активно изучаю React, уже есть первые проекты.
+
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="page__jobs jobs-page">
+					<div class="jobs-page__container">
+						<div class="jobs-page__tiltle title-block">
+							<div class="title-block__heading">Мои работы</div>
+							<h2 class="title-block__sub-heading">Все работы выполнил самостоятельно</h2>
+						</div>
+						<div class="jobs-page__body">
+							<div class="jobs-page__item">
+								<a href="https://sergei00026.github.io/Electric-scooter/dist/" target="_blank"><img src="@img/jobs/job1.png" alt="job"></a>
+							</div>
+							<div class="jobs-page__item">
+								<a href="https://sergei00026.github.io/photostudio/dist/" target="_blank"><img src="@img/jobs/job2.png" alt="job"></a>
+							</div>
+							<div class="jobs-page__item">
+								<a href="https://sergei00026.github.io/travel/dist/" target="_blank"><img src="@img/jobs/job3.png" alt="job"></a>
+							</div>
+							<div class="jobs-page__item">
+								<a href="https://sergei00026.github.io/dentistry/" target="_blank"><img src="@img/jobs/job4.png" alt="job"></a>
+							</div>
+							<div class="jobs-page__item">
+								<a href="https://sergei00026.github.io/GERI-CHT/home.html" target="_blank"><img src="@img/jobs/job5.png" alt="job"></a>
+							</div>
+							<div class="jobs-page__item">
+								<a href="https://sergei00026.github.io/avia/" target="_blank"><img src="@img/jobs/job6.png" alt="job"></a>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
