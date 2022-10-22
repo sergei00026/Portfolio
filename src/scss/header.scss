@@ -1,11 +1,18 @@
 //====================================================================================================
 .header {
-	// position: absolute;
-	// width: 100%;
-	// top: 0;
-	// left: 0;
-	padding-top: 50px;
-	// .header__container
+	z-index: 500;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	width: 100%;
+	&._header-scroll {
+		position: fixed;
+		top: -200%;
+	}
+	&._header-show {
+		transition: top 0.3s ease 0s;
+		top: 0;
+		background: #fff;
+	}
 	&__container {
 		display: flex;
 		align-items: center;
@@ -83,6 +90,17 @@
 	}
 	// .header__item
 	&__item {
+		transform: scale(0);
+		a {
+			color: #fff;
+		}
+
+		._watcher-view & {
+			transform: scale(1);
+			a {
+				color: inherit;
+			}
+		}
 	}
 	// .header__link
 	&__link {
@@ -97,6 +115,14 @@
 	}
 	// .header__icon
 	&__icon {
+	}
+}
+@keyframes showScale {
+	0% {
+		transform: scale(0.5);
+	}
+	100% {
+		transform: scale(1);
 	}
 }
 

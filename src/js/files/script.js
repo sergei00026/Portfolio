@@ -18,3 +18,19 @@ document.addEventListener("click", function (e) {
 		html.classList.remove('lock');
 	}
 });
+
+function showScaleElements(selectorParent, selectors) {
+	const parent = document.querySelectorAll(selectorParent),
+		elements = document.querySelectorAll(selectors);
+	let step = 0;
+
+	elements.forEach(element => {
+		step += (0.5 / +elements.length);
+
+		element.style.cssText = `transition: ${step}s all linear;`;
+
+	});
+
+
+}
+showScaleElements('.header', '.header__item');
