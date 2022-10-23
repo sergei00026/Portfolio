@@ -66,7 +66,7 @@ flsFunctions.spollers();
 Модуль параллакса мышью
 Документация: https://template.fls.guru/template-docs/modul-animacii-parallaks-obektov-pri-dvizhenii-myshi.html
 */
-// import './libs/parallax-mouse.js'
+import './libs/parallax-mouse.js';
 
 // ========================================================================================================================================================================================================================================================
 // Работа с формами ========================================================================================================================================================================================================================================================
@@ -157,7 +157,7 @@ import './files/scroll/lazyload.js';
 // Наблюдатель за объектами c атрибутом data-watch
 // Документация: https://template.fls.guru/template-docs/modul-nabljudatel-za-poyavleniem-elementa-pri-skrolle.html
 // Сниппет(HTML):
-import './libs/watcher.js'
+import './libs/watcher.js';
 
 // Функции работы скроллом
 import * as flsScroll from "./files/scroll/scroll.js";

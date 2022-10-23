@@ -19,18 +19,16 @@ document.addEventListener("click", function (e) {
 	}
 });
 
-function showScaleElements(selectorParent, selectors) {
+// add animation regulat increase
+function showScaleElements(selectorParent, selectors, duration = 0.3, speed = 0.2) {
 	const parent = document.querySelectorAll(selectorParent),
 		elements = document.querySelectorAll(selectors);
 	let step = 0;
 
 	elements.forEach(element => {
-		step += (0.5 / +elements.length);
-
-		element.style.cssText = `transition: ${step}s all linear;`;
-
+		step += (speed / +elements.length);
+		element.style.cssText = `transition: ${duration}s all ease ${step}s;`;
 	});
-
-
 }
 showScaleElements('.header', '.header__item');
+showScaleElements('.header', '.aboutme-page__point', 0.5, 0.5);

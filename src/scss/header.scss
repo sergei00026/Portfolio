@@ -1,9 +1,10 @@
 //====================================================================================================
 .header {
 	z-index: 500;
-	padding-top: 25px;
-	padding-bottom: 25px;
+
 	width: 100%;
+	position: relative;
+	transition: all 0.3s ease 0s;
 	&._header-scroll {
 		position: fixed;
 		top: -200%;
@@ -11,12 +12,15 @@
 	&._header-show {
 		transition: top 0.3s ease 0s;
 		top: 0;
-		background: #fff;
+		left: 0;
+		background: rgba(255, 255, 255, 0.9);
 	}
 	&__container {
 		display: flex;
 		align-items: center;
 		@include adaptiveValue("gap", 108, 40);
+		@include adaptiveValue("padding-top", 20, 5);
+		@include adaptiveValue("padding-bottom", 20, 5);
 	}
 	// .header__logo
 	&__logo {
@@ -91,15 +95,8 @@
 	// .header__item
 	&__item {
 		transform: scale(0);
-		a {
-			color: #fff;
-		}
-
 		._watcher-view & {
 			transform: scale(1);
-			a {
-				color: inherit;
-			}
 		}
 	}
 	// .header__link
@@ -109,20 +106,25 @@
 		line-height: math.div(26, 20);
 		color: #7e7f86;
 		transition: all 0.3s ease 0s;
+		position: relative;
 		&:hover {
-			color: $mainColor;
+			color: #8643dc;
+			&::before {
+				width: 30%;
+			}
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			width: 0;
+			transition: all 0.3s ease 0s;
+			border-bottom: 3px solid #8643dc;
 		}
 	}
 	// .header__icon
 	&__icon {
-	}
-}
-@keyframes showScale {
-	0% {
-		transform: scale(0.5);
-	}
-	100% {
-		transform: scale(1);
 	}
 }
 
@@ -135,8 +137,8 @@
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
-		flex: 0 0 70px;
-		height: rem(70);
+		flex: 0 0 40px;
+		height: rem(40);
 		cursor: pointer;
 		z-index: 55;
 		border-radius: 50%;
@@ -160,7 +162,7 @@
 			bottom: 35%;
 		}
 		span {
-			top: 50%;
+			top: 49%;
 		}
 		.menu-open & {
 			span {

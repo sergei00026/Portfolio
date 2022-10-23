@@ -157,6 +157,9 @@ body {
 	// .page__skills
 	&__skills {
 	}
+	// .page__competency
+	&__competency {
+	}
 	// .page__jobs
 	&__jobs {
 	}
@@ -314,9 +317,65 @@ body {
 	}
 	// .aboutme-page__description
 	&__description {
-		line-height: math.div(32, 16);
+		line-height: math.div(24, 16);
 		color: #47444e;
-		@include adaptiveValue("font-size", 18, 14);
+		@include adaptiveValue("font-size", 20, 14);
+		font-family: roboto;
+		counter-reset: gradient-counter;
+		margin: 1.75rem 0;
+		padding-left: 1rem;
+	}
+	// .aboutme-page__point
+	&__point {
+		position: relative;
+		left: 200%;
+
+		background: white;
+		border-radius: 0 0.5rem 0.5rem 0.5rem;
+		box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+		counter-increment: gradient-counter;
+		min-height: 3rem;
+		padding: 1rem 1rem 1rem 3rem;
+		position: relative;
+		&::before,
+		&::after {
+			background: linear-gradient(135deg, rgb(255, 89, 193) 0%, #8643dc 100%);
+			border-radius: 1rem 1rem 0 1rem;
+			content: "";
+			height: 3rem;
+			left: -1rem;
+			color: black;
+			overflow: hidden;
+			position: absolute;
+			top: -1rem;
+			width: 3rem;
+		}
+		&::before {
+			align-items: flex-end;
+			box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+			content: counter(gradient-counter);
+			display: flex;
+			justify-content: flex-end;
+			padding: 0.125em 0.25em;
+			z-index: 1;
+		}
+		@for $i from 1 through 5 {
+			&:nth-child(10n + #{$i}):before {
+				background: linear-gradient(135deg, rgba(#8643dc, $i * 0.2) 0%, rgba(yellow, $i * 0.2) 100%);
+			}
+		}
+		@for $i from 6 through 10 {
+			&:nth-child(10n + #{$i}):before {
+				background: linear-gradient(135deg, rgba(#8643dc, 1 - (($i - 5) * 0.2)) 0%, rgba(rgb(255, 89, 193), 1 - (($i - 5) * 0.2)) 100%);
+			}
+		}
+		+ li {
+			margin-top: 2rem;
+		}
+
+		._watcher-view & {
+			left: 0;
+		}
 	}
 	// .aboutme-page__spollers
 	&__spollers {
@@ -389,31 +448,154 @@ body {
 	}
 	// .skills-page__body
 	&__body {
+		// display: grid;
+		// grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 		display: flex;
-		gap: 30px;
 		flex-wrap: wrap;
-		justify-content: space-evenly;
+		row-gap: 30px;
+		column-gap: 40px;
+		justify-content: center;
 	}
 	// .skills-page__item
 	&__item {
-		height: 100%;
 		display: flex;
-		flex: 0 1 calc((100% / 7) - 30px);
+		flex: 1 1 auto;
 		flex-direction: column;
 		align-items: center;
-		min-width: 60px;
-		img {
-			max-width: 100%;
-			&:not(:last-child) {
-				margin-bottom: 10px;
-			}
+		position: relative;
+		transition: all 0.3s ease 0s;
+		padding: 8px;
+		&:hover {
+			color: #8643dc;
+		}
+		&:active:after {
+			background: transparent;
+		}
+		&:hover:before {
+			opacity: 1;
+		}
+		&::before {
+			content: "";
+			background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+			position: absolute;
+			top: -2px;
+			left: -2px;
+			background-size: 400%;
+			z-index: -1;
+			filter: blur(5px);
+			width: calc(100% + 4px);
+			height: calc(100% + 4px);
+			animation: glowing 20s linear infinite;
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out;
+			border-radius: 10px;
+		}
+		&::after {
+			z-index: -1;
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			// background: #111;
+			left: 0;
+			top: 0;
+			border-radius: 10px;
+		}
+	}
+	// .skills-page__icon
+	&__icon {
+		i {
+			font-size: 100px;
 		}
 	}
 	// .skills-page__heading
 	&__heading {
-		flex: 1 1 auto;
-
 		font-weight: 700;
+	}
+}
+@keyframes glowing {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+//=============================================================
+
+.competency-page {
+	// .competency-page__container
+	&__container {
+		@include adaptiveValue("padding-bottom", 100, 50);
+		@include adaptiveValue("padding-top", 100, 50);
+	}
+	// .competency-page__box
+	&__box {
+		font-family: roboto;
+	}
+	// .competency-page__spollers
+	&__spollers {
+		@media (min-width: 910px) {
+			display: grid;
+			gap: 30px;
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	// .competency-page__item
+	&__item {
+		font-weight: 500;
+		&:not(:last-child) {
+			margin-bottom: 8px;
+			@media (max-width: 910px) {
+				margin-bottom: 25px;
+			}
+		}
+	}
+	// .competency-page__title
+	&__title {
+		@include adaptiveValue("font-size", 28, 18);
+		font-weight: 700;
+		font-family: roboto;
+		position: relative;
+		width: 100%;
+		text-align: left;
+		margin-bottom: 12px;
+		padding-bottom: 7px;
+		border-bottom: 2px solid rgba(134, 67, 220, 0.5);
+		._spoller-init & {
+			cursor: pointer;
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				background-color: #000;
+				height: 2px;
+				width: 15px;
+				transition: transform 0.5s ease 0s;
+			}
+			&::before {
+				transform: translate(-75%, -50%) rotate(40deg);
+			}
+			&::after {
+				transform: translate(0, -50%) rotate(-40deg);
+			}
+			&._spoller-active {
+				&::before {
+					transform: translateX(-75%) rotate(-40deg);
+				}
+				&::after {
+					transform: rotate(40deg);
+				}
+			}
+		}
+	}
+	// .competency-page__body
+	&__body {
 	}
 }
 
@@ -421,6 +603,7 @@ body {
 .jobs-page {
 	background: linear-gradient(180deg, rgba(187, 133, 255, 0.14) 0%, rgba(255, 177, 222, 0.14) 100%);
 	@include adaptiveValue("padding-bottom", 100, 50);
+	@include adaptiveValue("padding-top", 100, 50);
 
 	// .jobs-page__container
 	&__container {
@@ -433,18 +616,19 @@ body {
 	}
 	// .jobs-page__body
 	&__body {
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		align-items: center;
 		column-gap: 20px;
 		row-gap: 30px;
-		justify-content: space-between;
 	}
 	// .jobs-page__item
 	&__item {
-		flex: 0 1 calc(50% - 20px);
 		transition: all 0.3s ease 0s;
+
 		&:hover {
 			filter: drop-shadow(0px 20px 50px rgba(220, 192, 255, 0.9));
+			transform: scale(1.5);
 		}
 		@media (max-width: $mobileSmall) {
 			flex: 0 1 100%;
